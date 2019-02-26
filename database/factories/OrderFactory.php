@@ -6,6 +6,6 @@ $factory->define(App\Order::class, function (Faker $faker) {
     return [
         'price' => $faker->numberBetween(100000000, 999999999),
         'date_of_sell' => $faker->date($format = 'Y-m-d', $max = 'now'),
-        'status' => $faker->numberBetween(1, 3),
+        'status' => $faker->numberBetween(1, 4),
     ];
 });

@@ -143,6 +143,11 @@ return [
             'icon' => 'user',
         ],
         [
+            'text' => 'Quan Ly Dat Hang',
+            'url'  => 'admin/orders',
+            'icon' => 'shopping-cart',
+        ],
+        [
             'text' => 'Change Password',
             'url'  => 'admin/settings',
             'icon' => 'lock',

@@ -133,6 +133,16 @@ return [
             'icon' => 'user',
         ],
         [
+            'text' => 'Quan Ly Product',
+            'url'  => 'admin/products',
+            'icon' => 'user',
+        ],
+        [
+            'text' => 'Quan Ly Category',
+            'url'  => 'admin/categories',
+            'icon' => 'user',
+        ],
+        [
             'text' => 'Change Password',
             'url'  => 'admin/settings',
             'icon' => 'lock',

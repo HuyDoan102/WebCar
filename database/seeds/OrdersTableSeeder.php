@@ -12,6 +12,7 @@ class OrdersTableSeeder extends Seeder
      */
     public function run()
     {
+        Order::truncate();
         factory(Order::class, 100)->create();
     }
 }

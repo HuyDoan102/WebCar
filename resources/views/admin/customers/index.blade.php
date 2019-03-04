@@ -24,7 +24,7 @@
             <th>Date Of Birth</th>
             <th>Address</th>
             <th>Phone</th>
-            <th>Action</th>
+            <th class="nosort">Action</th>
           </tr>
           </thead>
           <tbody>

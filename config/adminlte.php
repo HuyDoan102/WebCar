@@ -133,6 +133,16 @@ return [
             'icon' => 'user',
         ],
         [
+            'text' => 'Quan Ly Product',
+            'url'  => 'admin/products',
+            'icon' => 'user',
+        ],
+        [
+            'text' => 'Quan Ly Category',
+            'url'  => 'admin/categories',
+            'icon' => 'user',
+        ],
+        [
             'text' => 'Quan Ly Dat Hang',
             'url'  => 'admin/orders',
             'icon' => 'shopping-cart',

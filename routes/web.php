@@ -32,3 +32,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function() {
     Route::resource('customers', 'CustomersController');
     Route::resource('orders', 'OrdersController');
 });
+
+Route::group(['prefix' => 'admin', 'as' => 'admin.'], function() {
+    Route::resource('categories', 'CategoriesController');
+});
+
+Route::group(['prefix' => 'admin', 'as' => 'admin.'], function() {
+    Route::resource('products', 'ProductsController');
+});

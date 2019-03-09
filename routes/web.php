@@ -40,3 +40,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function() {
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function() {
     Route::resource('products', 'ProductsController');
 });
+
+Route::group(['prefix' => 'admin', 'as' => 'admin.'], function() {
+    Route::resource('admins', 'AdminsController');
+});
+
+Route::group(['prefix' => 'admin', 'as' => 'admin.'], function() {
+    Route::resource('tests', 'TestsController');
+});

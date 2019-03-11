@@ -48,3 +48,5 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function() {
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function() {
     Route::resource('tests', 'TestsController');
 });
+
+Route::get('/homepage', 'HomePageController@index')->name('homepage');

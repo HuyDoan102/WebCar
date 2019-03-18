@@ -14,11 +14,11 @@
 <div class="menu">
     <div class="top-nav">
         <ul>
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Specials</a></li>
-            <li><a href="#">New</a></li>
-            <li><a href="#">Contact</a></li>
+            <li class="active"><a href="{{ route('homepage') }}">Home</a></li>
+            <li><a href="{{ route('about') }}">About</a></li>
+            <li><a href="{{ route('specials') }}">Specials</a></li>
+            <li><a href="{{ route('new') }}">New</a></li>
+            <li><a href="{{ route('contact') }}">Contatc</a></li>
             <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
             <li><a href="{{ route('login') }}">Login</a></li>
         </ul>

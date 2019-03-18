@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'title' => 'WebMyPham',
+    'title' => 'WebCar',
 
     'title_prefix' => '',
 
@@ -30,7 +30,7 @@ return [
     |
     */
 
-    'logo' => '<b>WebMyPham</b>',
+    'logo' => '<b>WebCar</b>',
 
     'logo_mini' => '<b>A</b>LT',
 

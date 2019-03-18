@@ -50,3 +50,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function() {
 });
 
 Route::get('/homepage', 'HomePageController@index')->name('homepage');
+Route::get('/about', 'HomePageController@about')->name('about');
+Route::get('/specials', 'HomePageController@specials')->name('specials');
+Route::get('/new', 'HomePageController@new')->name('new');
+Route::get('/contact', 'HomePageController@contact')->name('contact');

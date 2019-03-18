@@ -10,6 +10,6 @@ $factory->define(App\Product::class, function (Faker $faker) {
         'description' => $faker->text,
         'status' => $faker->numberBetween(1, 3),
         'image' =>$faker->imageUrl(200, 200, 'transport'),
-
+        'price' => $faker->numberBetween(100000000, 999999999),
     ];
 });

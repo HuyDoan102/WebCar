@@ -16,17 +16,17 @@
             </div>
             <div class="content-wrapper">
                 <div class="content-top">
-                    @foreach($products as $product)
-                    <div class="box_wrapper"><h1>{{ $product->name }}</h1></div>
+                    <div class="box_wrapper"><h1>Car</h1></div>
                     <div class="text">
                         <div class="grid_1_of_3 images_1_of_3">
+                            @foreach($products as $product)
                             <div class="grid_1">
                                 <a href="#"><img src="{{ asset('images/pic5.jpg')}}" title="continue reading" alt=""></a>
                                 <div class="grid_desc">
-                                    <p class="title">Lorem ipsum dolor sitconsectetuer adipiscing elit</p>
-                                    <p class="title1">Lorem ipsum dolor sitconsectetuer adipiscing elit</p>
+                                    <p class="title">{{ $product->name }}</p>
+                                    <p class="title1">{{ $product->decription }}</p>
                                     <div class="price" style="height: 19px;">
-                                        <span class="reducedfrom">$66.00</span>
+                                        <span class="reducedfrom">{{ $product->price }}</span>
                                         <span class="actual">$12.00</span>
                                     </div>
                                     <div class="cart-button">
@@ -38,75 +38,10 @@
                                     </div>
                                 </div>
                             </div>
+                            @endforeach
                             <div class="clear"></div>
                         </div>
                         <div class="clear"></div>
-                    </div>
-                </div>
-                @endforeach
-                <div class="content-top">
-                    <div class="box_wrapper"><h1>Featured Products</h1></div>
-                    <div class="text">
-                        <div class="grid_1_of_3 images_1_of_3">
-                            <div class="grid_1">
-                                <a href="#"><img src="{{ asset('images/pic1.jpg')}}" title="continue reading" alt=""></a>
-                                <div class="grid_desc">
-                                    <p class="title">Lorem ipsum dolor sitconsectetuer adipiscing elit</p>
-                                    <p class="title1">Lorem ipsum dolor sitconsectetuer adipiscing elit</p>
-                                    <div class="price" style="height: 19px;">
-                                        <span class="reducedfrom">$66.00</span>
-                                        <span class="actual">$12.00</span>
-                                    </div>
-                                    <div class="cart-button">
-                                        <div class="cart">
-                                            <a href="#"><img src="{{ asset('images/cart.png')}}" alt=""/></a>
-                                        </div>
-                                        <button class="button"><span>Details</span></button>
-                                        <div class="clear"></div>
-                                    </div>
-                                </div>
-                            </div><div class="clear"></div>
-                        </div>
-                        <div class="grid_1_of_3 images_1_of_3">
-                            <div class="grid_1">
-                                <a href="#"><img src="{{ asset('images/pic2.jpg')}}" title="continue reading" alt=""></a>
-                                <div class="grid_desc">
-                                    <p class="title">Lorem ipsum dolor sitconsectetuer adipiscing elit</p>
-                                    <p class="title1">Lorem ipsum dolor sitconsectetuer adipiscing elit</p>
-                                    <div class="price" style="height: 19px;">
-                                        <span class="reducedfrom">$66.00</span>
-                                        <span class="actual">$12.00</span>
-                                    </div>
-                                    <div class="cart-button">
-                                        <div class="cart">
-                                            <a href="#"><img src="{{ asset('images/cart.png')}}" alt=""/></a>
-                                        </div>
-                                        <button class="button"><span>Details</span></button>
-                                        <div class="clear"></div>
-                                    </div>
-                                </div>
-                            </div><div class="clear"></div>
-                        </div>
-                        <div class="grid_1_of_3 images_1_of_3">
-                            <div class="grid_1">
-                                <a href="#"><img src="{{ asset('images/pic3.jpg')}}" title="continue reading" alt=""></a>
-                                <div class="grid_desc">
-                                    <p class="title">Lorem ipsum dolor sitconsectetuer adipiscing elit</p>
-                                    <p class="title1">Lorem ipsum dolor sitconsectetuer adipiscing elit</p>
-                                    <div class="price" style="height: 19px;">
-                                        <span class="reducedfrom">$66.00</span>
-                                        <span class="actual">$12.00</span>
-                                    </div>
-                                    <div class="cart-button">
-                                        <div class="cart">
-                                            <a href="#"><img src="{{ asset('images/cart.png')}}" alt=""/></a>
-                                        </div>
-                                        <button class="button"><span>Details</span></button>
-                                        <div class="clear"></div>
-                                    </div>
-                                </div>
-                            </div><div class="clear"></div>
-                        </div><div class="clear"></div>
                     </div>
                 </div>
             </div>

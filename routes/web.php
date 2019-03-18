@@ -34,7 +34,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function() {
 });
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function() {
-    Route::resource('categories', 'CategoriesController');
+    Route::resource('categories', 'SuppliersController');
 });
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function() {
@@ -50,3 +50,5 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function() {
 });
 
 Route::get('/homepage', 'HomePageController@index')->name('homepage');
+
+Route::get('/add-to-cart/{id}', 'ShoppingCartController@getAddToCart')->name('carts.addToCart');

@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Category;
+use App\Supplier;
 
-class CategoriesController extends Controller
+class SuppliersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
+        $categories = Supplier::all();
 
         return view('admin.categories.index', compact('categories'));
     }
@@ -38,7 +38,7 @@ class CategoriesController extends Controller
     public function store(Request $request)
     {
         $category = $request->only('name');
-        Category::create($category);
+        Supplier::create($category);
 
         return redirect()->route('admin.categories.index');
     }
@@ -62,7 +62,7 @@ class CategoriesController extends Controller
      */
     public function edit($category)
     {
-        $category = Category::find($category);
+        $category = Supplier::find($category);
 
         return view('admin.categories.edit', compact("category"));
     }
@@ -78,7 +78,7 @@ class CategoriesController extends Controller
     {
         $payload = $request->only('name');
 
-        Category::where('id', $category)->update($payload);
+        Supplier::where('id', $category)->update($payload);
 
         return redirect()->route('admin.categories.index');
     }
@@ -91,7 +91,7 @@ class CategoriesController extends Controller
      */
     public function destroy($category)
     {
-        $category = category::find($category);
+        $category = Supplier::find($category);
 
         $category->delete();
 

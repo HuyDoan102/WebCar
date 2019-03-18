@@ -138,7 +138,7 @@ return [
             'icon' => 'user',
         ],
         [
-            'text' => 'Quan Ly Category',
+            'text' => 'Quan Ly Supplier',
             'url'  => 'admin/categories',
             'icon' => 'user',
         ],

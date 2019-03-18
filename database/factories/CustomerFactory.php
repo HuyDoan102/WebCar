@@ -9,7 +9,6 @@ $factory->define(App\Customer::class, function (Faker $faker) {
         'name' => $faker->name,
         'dob'   =>$faker->date($format = 'Y-m-d', $max = 'now'),
         'address' => $faker->address,
-        'phone' => $faker->e164PhoneNumber,
-        'role_id' => App\Role::all()->random()->id
+        'phone' => $faker->e164PhoneNumber
     ];
 });

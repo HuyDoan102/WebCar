@@ -16,6 +16,9 @@ const PROCESSING = 2;
 const SHIPPED = 3;
 const DELIVERED = 4;
 
+const QUANTITY_TO_CART = 1;
+const VALUE_ZERO = 0;
+
 if (!function_exists('convertClassOrderStatus')) {
     function convertClassOrderStatus($value = 0)
     {

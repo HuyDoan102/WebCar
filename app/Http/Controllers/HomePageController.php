@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
 use Illuminate\Http\Request;
 
 class HomePageController extends Controller
 {
     public function index()
     {
-        return view('homepage');
+        $products = Product::paginate(9);
+
+        return view('homepage', compact("products"));
     }
 }

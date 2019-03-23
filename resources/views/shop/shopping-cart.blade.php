@@ -33,7 +33,7 @@
 
                                         <td class="price">{{ $product->getProduct()->price }}</td>
 
-                                        <td><a href=""><span class="fa fa-minus" aria-hidden="true"></span></a></td>
+                                        <td><a href="{{ route('carts.reduceByOne', $product->getProduct()->id) }}"><span class="fa fa-minus" aria-hidden="true"></span></a></td>
 
                                         <td class="quantity">
                                             <div class="input-group mb-3">
@@ -41,7 +41,7 @@
                                             </div>
                                         </td>
 
-                                        <td><a href=""><span class="fa fa-plus" aria-hidden="true"></span></a></td>
+                                        <td><a href="{{ route('carts.increaseByOne', $product->getProduct()->id) }}"><span class="fa fa-plus" aria-hidden="true"></span></a></td>
 
                                         <td>{{ $product->getTotalPrice() }}</td>
                                     </tr>

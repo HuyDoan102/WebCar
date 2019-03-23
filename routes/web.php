@@ -54,3 +54,5 @@ Route::get('/homepage', 'HomePageController@index')->name('homepage');
 Route::get('/add-to-cart/{id}', 'ShoppingCartController@getAddToCart')->name('carts.addToCart');
 Route::get('/shopping-cart', 'ShoppingCartController@getCart')->name('carts.shoppingCart');
 Route::get('/remove/{id}', 'ShoppingCartController@getRemoveItem')->name('carts.removeItem');
+Route::get('/reduce/{id}', 'ShoppingCartController@getReduceByOne')->name('carts.reduceByOne');
+Route::get('/increase/{id}', 'ShoppingCartController@getIncreaseByOne')->name('carts.increaseByOne');

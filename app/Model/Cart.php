@@ -45,7 +45,7 @@ class Cart
         return $totalQuantity;
     }
 
-    public function removeFood($product)
+    public function removeProduct($product)
     {
         if (array_key_exists($product->id, $this->items)) {
             unset($this->items[$product->id]);

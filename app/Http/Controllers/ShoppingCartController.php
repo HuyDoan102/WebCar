@@ -36,21 +36,31 @@ class ShoppingCartController extends Controller
 
     public function getReduceByOne($id)
     {
-        $oldCart = Session::has('cart_list') ? Session::get('cart_list') : null;
-
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cartProduct = $oldCart->getProducts()[$id];
+        $cartProduct->reduceWith(QUANTITY_TO_CART);
         $product = Product::find($id);
+
+        if ($cartProduct->getQuantity() > VALUE_ZERO) {
+            Session::put('cart', $oldCart);
+        } else {
+            $oldCart->removeProduct($product);
+            if (empty($oldCart->getProducts())) {
+                Session::forget('cart');
+            } else {
+                Session::put('cart', $oldCart);
+            }
+        }
 
         return redirect()->route('carts.shoppingCart');
     }
 
     public function getIncreaseByOne($id)
     {
-        $oldCart = Session::has('cart_list') ? Session::get('cart_list') : null;
-
-        $food = $this->foodRepository->find($id);
-        $store_id = $food->store->id;
-        $cartOfStore = $oldCart->getCarts()[$store_id];
-        $cartOfStore->addFood($food);
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cartProduct = $oldCart->getProducts()[$id];
+        $cartProduct->increaseWith(QUANTITY_TO_CART);
+        Session::put('cart', $oldCart);
 
         return redirect()->route('carts.shoppingCart');
     }
@@ -60,7 +70,7 @@ class ShoppingCartController extends Controller
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
 
         $product = Product::find($id);
-        $oldCart->removeFood($product);
+        $oldCart->removeProduct($product);
 
         return redirect()->route('carts.shoppingCart');
     }

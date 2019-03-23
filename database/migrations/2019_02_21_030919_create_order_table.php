@@ -18,7 +18,7 @@ class CreateOrderTable extends Migration
             $table->unsignedInteger('customer_id');
             $table->dateTime('date_of_sell');
             $table->tinyInteger('status');
-            $table->bigInteger('price');
+            $table->bigInteger('total_price');
             $table->timestamps();
         });
     }

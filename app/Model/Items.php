@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Cart;
+namespace App\Model;
 
 class Items
 {

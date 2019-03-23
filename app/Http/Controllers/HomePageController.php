@@ -9,7 +9,7 @@ class HomePageController extends Controller
 {
     public function index()
     {
-        $products = Product::paginate(9);
+        $products = Product::all()->take(3);
 
         return view('homepage', compact("products"));
     }

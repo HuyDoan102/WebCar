@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     protected $fillable = [
-        'name', 'category_id', 'phone', 'description', 'status' , 'image'
+        'name', 'supplier_id', 'phone', 'description', 'status' , 'image'
     ];
 
     public function category()
     {
-        return $this->belongsTo(Supplier::class, 'category_id');
+        return $this->belongsTo(Supplier::class, 'supplier_id');
     }
 }

@@ -30,7 +30,7 @@ class ProductsController extends Controller
         $products = Product::all();
         $categories = Supplier::all();
 
-        return view ('admin.products.create', compact("products", "categories"));
+        return view ('admin.products.create', compact("products", "suppliers"));
     }
 
     /**
@@ -68,9 +68,9 @@ class ProductsController extends Controller
     public function edit($product)
     {
         $product = Product::find($product);
-        $categories = Supplier::all();
+        $suppliers = Supplier::all();
 
-        return view('admin.products.edit', compact("product", "categories"));
+        return view('admin.products.edit', compact("product", "suppliers"));
     }
 
     /**
@@ -82,7 +82,7 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $product)
     {
-        $payload = $request->only('category_id', 'phone', 'description', 'status', 'image');
+        $payload = $request->only('supplier_id', 'phone', 'description', 'status', 'image');
 
         Product::Where('id', $product)->update($payload);
 

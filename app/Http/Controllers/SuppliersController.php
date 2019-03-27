@@ -14,9 +14,10 @@ class SuppliersController extends Controller
      */
     public function index()
     {
-        $categories = Supplier::all();
 
-        return view('admin.categories.index', compact('categories'));
+        $suppliers = Supplier::all();
+
+        return view('admin.suppliers.index', compact('suppliers'));
     }
 
     /**
@@ -26,7 +27,7 @@ class SuppliersController extends Controller
      */
     public function create()
     {
-        return view('admin.categories.create');
+        return view('admin.suppliers.create');
     }
 
     /**
@@ -37,10 +38,10 @@ class SuppliersController extends Controller
      */
     public function store(Request $request)
     {
-        $category = $request->only('name');
-        Supplier::create($category);
+        $supplier = $request->only('name');
+        Supplier::create($supplier);
 
-        return redirect()->route('admin.categories.index');
+        return redirect()->route('admin.suppliers.index');
     }
 
     /**
@@ -60,11 +61,11 @@ class SuppliersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($category)
+    public function edit($supplier)
     {
-        $category = Supplier::find($category);
+        $supplier = Supplier::find($supplier);
 
-        return view('admin.categories.edit', compact("category"));
+        return view('admin.suppliers.edit', compact("supplier"));
     }
 
     /**
@@ -74,13 +75,13 @@ class SuppliersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $category)
+    public function update(Request $request, $supplier)
     {
         $payload = $request->only('name');
 
-        Supplier::where('id', $category)->update($payload);
+        Supplier::where('id', $supplier)->update($payload);
 
-        return redirect()->route('admin.categories.index');
+        return redirect()->route('admin.suppliers.index');
     }
 
     /**
@@ -89,12 +90,12 @@ class SuppliersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($category)
+    public function destroy($supplier)
     {
-        $category = Supplier::find($category);
+        $supplier = Supplier::find($supplier);
 
-        $category->delete();
+        $supplier->delete();
 
-        return redirect()->route('admin.categories.index');
+        return redirect()->route('admin.suppliers.index');
     }
 }

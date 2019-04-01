@@ -34,7 +34,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function() {
 });
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function() {
-    Route::resource('categories', 'SuppliersController');
+    Route::resource('suppliers', 'SuppliersController');
 });
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function() {

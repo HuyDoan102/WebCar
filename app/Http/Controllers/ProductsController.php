@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
-use App\Category;
+use App\Supplier;
 
 class ProductsController extends Controller
 {
@@ -28,9 +28,9 @@ class ProductsController extends Controller
     public function create()
     {
         $products = Product::all();
-        $categories = Category::all();
+        $categories = Supplier::all();
 
-        return view ('admin.products.create', compact("products", "categories"));
+        return view ('admin.products.create', compact("products", "suppliers"));
     }
 
     /**
@@ -41,7 +41,7 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        $product = $request->only('category_id', 'phone', 'description', 'status', 'image');
+        $product = $request->only('category_id', 'name', 'phone', 'description', 'status', 'image');
 
         Product::create($product);
 
@@ -68,9 +68,9 @@ class ProductsController extends Controller
     public function edit($product)
     {
         $product = Product::find($product);
-        $categories = Category::all();
+        $suppliers = Supplier::all();
 
-        return view('admin.products.edit', compact("product", "categories"));
+        return view('admin.products.edit', compact("product", "suppliers"));
     }
 
     /**
@@ -82,7 +82,7 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $product)
     {
-        $payload = $request->only('category_id', 'phone', 'description', 'status', 'image');
+        $payload = $request->only('supplier_id', 'phone', 'description', 'status', 'image');
 
         Product::Where('id', $product)->update($payload);
 

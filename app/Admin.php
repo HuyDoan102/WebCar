@@ -14,5 +14,5 @@ class Admin extends Model
         'password',
     ];
 
-    protected $table = "admin";
+    protected $table = "admins";
 }

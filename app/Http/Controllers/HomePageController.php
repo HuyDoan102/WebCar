@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
 use Illuminate\Http\Request;
 
 class HomePageController extends Controller
 {
     public function index()
     {
-        return view('homepage');
+        $products = Product::all()->take(3);
+
+        return view('homepage', compact("products"));
     }
 
     public function about()

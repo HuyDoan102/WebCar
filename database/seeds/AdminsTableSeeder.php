@@ -13,6 +13,6 @@ class AdminsTableSeeder extends Seeder
     public function run()
     {
         Admin::truncate();
-        factory(Admin::class, 100)->create();
+        factory(Admin::class, 10)->create();
     }
 }

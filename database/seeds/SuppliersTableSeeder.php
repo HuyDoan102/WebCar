@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Category;
+use App\Supplier;
 
-class CategoriesTableSeeder extends Seeder
+class SuppliersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,7 +12,7 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        Category::truncate();
-        factory(Category::class, 5)->create();
+        Supplier::truncate();
+        factory(Supplier::class, 5)->create();
     }
 }

@@ -20,6 +20,16 @@
             <li><a href="{{ route('new') }}">New</a></li>
             <li><a href="{{ route('contact') }}">Contatc</a></li>
             <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Specials</a></li>
+            <li><a href="#">New</a></li>
+            <li><a href="#">Contact</a></li>
+            <li>
+                <a href="{{ route('carts.shoppingCart') }}">
+                    <span class="fa fa-shopping-cart"></span>
+                    <span class="badge">{{ session()->has('cart') ? session()->get('cart')->getTotalQuantity() : '' }}</span>
+                </a>
+            </li>
             <li><a href="{{ route('login') }}">Login</a></li>
         </ul>
         <div class="clear"></div>

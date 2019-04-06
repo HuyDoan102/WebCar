@@ -9,6 +9,7 @@ $factory->define(App\Customer::class, function (Faker $faker) {
         'name' => $faker->name,
         'dob'   =>$faker->date($format = 'Y-m-d', $max = 'now'),
         'address' => $faker->address,
-        'phone' => $faker->e164PhoneNumber
+        'phone' => $faker->e164PhoneNumber,
+        'remember_token' => str_random(10),
     ];
 });

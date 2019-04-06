@@ -58,6 +58,36 @@
                         </span>
                     @endif
                 </div>
+                <div class="form-group has-feedback {{ $errors->has('phone') ? 'has-error' : '' }}">
+                    <input type="text" name="phone" class="form-control" value="{{ old('phone') }}"
+                           placeholder="Phone">
+                    <span class="glyphicon glyphicon-phone form-control-feedback"></span>
+                    @if ($errors->has('phone'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('phone') }}</strong>
+                        </span>
+                    @endif
+                </div>
+                <div class="form-group has-feedback {{ $errors->has('dob') ? 'has-error' : '' }}">
+                    <input type="text" name="dob" class="form-control" value="{{ old('dob') }}"
+                           placeholder="Date of birth">
+                    <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
+                    @if ($errors->has('dob'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('dob') }}</strong>
+                        </span>
+                    @endif
+                </div>
+                <div class="form-group has-feedback {{ $errors->has('address') ? 'has-error' : '' }}">
+                    <input type="text" name="address" class="form-control" value="{{ old('address') }}"
+                           placeholder="Address">
+                    <span class="glyphicon glyphicon-map-marker form-control-feedback"></span>
+                    @if ($errors->has('address'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('address') }}</strong>
+                        </span>
+                    @endif
+                </div>
                 <button type="submit"
                         class="btn btn-primary btn-block btn-flat"
                 >{{ trans('adminlte::adminlte.register') }}</button>

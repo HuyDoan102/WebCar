@@ -52,7 +52,7 @@
         <div class="clear"></div>
     </div>
     <div class="col-md-12 d-flex align-self-stretch">
-        <div id="map"></div>
+        <div class="map"></div>
     </div>
 </div>
 <div class="clear"></div>

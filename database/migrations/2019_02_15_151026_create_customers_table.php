@@ -18,9 +18,10 @@ class CreateCustomersTable extends Migration
             $table->string('email');
             $table->string('password')->default('123123123');
             $table->string('name');
-            $table->datetime('dob');
+            $table->date('dob');
             $table->string('address');
             $table->string('phone', 20);
+            $table->rememberToken();
             $table->timestamps();
         });
     }

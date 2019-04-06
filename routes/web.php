@@ -21,32 +21,30 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
+Route::group(array('namespace' => 'Auth', 'prefix' => 'customers', 'as' => 'customers.'), function() {
+    Route::get('/login', 'CustomerLoginController@showLoginForm')->name('login');
+    Route::post('/login', 'CustomerLoginController@login')->name('login.post');
+    Route::post('/logout', 'CustomerLoginController@logout')->name('logout');
+});
+
+Route::group(array('namespace' => 'Auth', 'prefix' => 'admins', 'as' => 'admins.'), function () {
+    Route::get('/login', 'AdminLoginController@showLoginForm')->name('login');
+    Route::post('/login', 'AdminLoginController@login')->name('login.post');
+    Route::post('/logout', 'AdminLoginController@logout')->name('logout');
+});
+
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['prefix' => 'admin', 'as' => 'admin.'], function() {
-    Route::resource('roles', 'RolesController');
-});
 
-
-Route::group(['prefix' => 'admin', 'as' => 'admin.'], function() {
-    Route::resource('customers', 'CustomersController');
-    Route::resource('orders', 'OrdersController');
-});
-
-Route::group(['prefix' => 'admin', 'as' => 'admin.'], function() {
-    Route::resource('suppliers', 'SuppliersController');
-});
-
-Route::group(['prefix' => 'admin', 'as' => 'admin.'], function() {
-    Route::resource('products', 'ProductsController');
-});
-
-Route::group(['prefix' => 'admin', 'as' => 'admin.'], function() {
-    Route::resource('admins', 'AdminsController');
-});
-
-Route::group(['prefix' => 'admin', 'as' => 'admin.'], function() {
-    Route::resource('tests', 'TestsController');
+Route::group(['middleware' => 'admin'], function() {
+    Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+        Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+        Route::resource('customers', 'CustomersController');
+        Route::resource('orders', 'OrdersController');
+        Route::resource('suppliers', 'SuppliersController');
+        Route::resource('products', 'ProductsController');
+        Route::resource('admins', 'AdminsController');
+    });
 });
 
 Route::get('/homepage', 'HomePageController@index')->name('homepage');

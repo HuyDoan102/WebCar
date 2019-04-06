@@ -1540,7 +1540,7 @@ ul.list-2 li span a {
 	}
 }
 
-#map {
+.map {
     height: 300px;
     width: 100%;
 }

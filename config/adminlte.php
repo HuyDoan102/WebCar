@@ -115,17 +115,15 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'Pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'file',
-            'label'       => 4,
-            'label_color' => 'success',
+            'text'        => 'Dashboard',
+            'url'         => 'admin/dashboard',
+            'icon'        => 'dashboard',
         ],
-        'ACCOUNT SETTINGS',
+        'Menu',
         [
-            'text' => 'Quan Ly Khach Hang',
-            'url'  => 'admin/customers',
-            'icon' => 'user',
+            'text' => 'Quan Ly Dat Hang',
+            'url'  => 'admin/orders',
+            'icon' => 'shopping-cart',
         ],
         [
             'text' => 'Quan Ly Product',
@@ -133,28 +131,14 @@ return [
             'icon' => 'user',
         ],
         [
-            'text' => 'Quan Ly Supplier',
-            'url'  => 'admin/suppliers',
+            'text' => 'Quan Ly Khach Hang',
+            'url'  => 'admin/customers',
             'icon' => 'user',
         ],
         [
-            'text' => 'Quan Ly Dat Hang',
-            'url'  => 'admin/orders',
-            'icon' => 'shopping-cart',
-        ],
-        
-        'LABELS',
-        [
-            'text'       => 'Important',
-            'icon_color' => 'red',
-        ],
-        [
-            'text'       => 'Warning',
-            'icon_color' => 'yellow',
-        ],
-        [
-            'text'       => 'Information',
-            'icon_color' => 'aqua',
+            'text' => 'Quan Ly Supplier',
+            'url'  => 'admin/suppliers',
+            'icon' => 'user',
         ],
     ],
 

@@ -65,32 +65,23 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+            <div class="top-right links">
+                <a href="{{ url('/homepage') }}">Home</a>
+                @if (Route::has('admins.login'))
+                    <a href="{{ !empty(Auth::guard('admin')->user()->name) ? route('admin.dashboard') : route('admins.login') }}">
+                        {{ !empty(Auth::guard('admin')->user()->name) ? Auth::guard('admin')->user()->name : 'Administrator Login'}}
+                    </a>
+                @endif
+                @if (Route::has('customers.login'))
+                    <a href="{{ !empty(Auth::guard()->user()->name) ? route('homepage') : route('customers.login') }}">
+                        {{ !empty(Auth::guard()->user()->name) ? Auth::guard()->user()->name : 'User Login' }}
+                    </a>
+                @endif
+            </div>
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    Welcome webCar
                 </div>
             </div>
         </div>

@@ -18,19 +18,35 @@
             <li><a href="{{ route('about') }}">About</a></li>
             <li><a href="{{ route('specials') }}">Specials</a></li>
             <li><a href="{{ route('new') }}">New</a></li>
-            <li><a href="{{ route('contact') }}">Contatc</a></li>
-            <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Specials</a></li>
-            <li><a href="#">New</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="{{ route('contact') }}">Contact</a></li>
             <li>
                 <a href="{{ route('carts.shoppingCart') }}">
                     <span class="fa fa-shopping-cart"></span>
                     <span class="badge">{{ session()->has('cart') ? session()->get('cart')->getTotalQuantity() : '' }}</span>
                 </a>
             </li>
-            <li><a href="{{ route('login') }}">Login</a></li>
+            @if (empty(Auth::guard()->user()->name))
+                <li><a href="{{ route('customers.login') }}">Login</a></li>
+
+            @else
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::guard()->user()->name }} <span class="caret"></span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" style="color: #000000" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </div>
+                </li>
+            @endif
         </ul>
         <div class="clear"></div>
      </div>

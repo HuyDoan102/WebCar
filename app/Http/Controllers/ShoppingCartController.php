@@ -34,6 +34,23 @@ class ShoppingCartController extends Controller
         return view('shop.shopping-cart', compact("cart", "totalPrice"));
     }
 
+    public function getCheckout()
+    {
+        if (!Session::has('cart')) {
+            return view('shop.shopping-cart');
+        }
+        $cart = Session::get('cart');
+
+        $total = $cart->getTotalPrice();
+
+        return view('shop.checkout', compact("total"));
+    }
+
+    public function postCheckout()
+    {
+
+    }
+
     public function getReduceByOne($id)
     {
         $oldCart = Session::has('cart') ? Session::get('cart') : null;

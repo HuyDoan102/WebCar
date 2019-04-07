@@ -58,3 +58,5 @@ Route::get('/shopping-cart', 'ShoppingCartController@getCart')->name('carts.shop
 Route::get('/remove/{id}', 'ShoppingCartController@getRemoveItem')->name('carts.removeItem');
 Route::get('/reduce/{id}', 'ShoppingCartController@getReduceByOne')->name('carts.reduceByOne');
 Route::get('/increase/{id}', 'ShoppingCartController@getIncreaseByOne')->name('carts.increaseByOne');
+Route::get('/checkout', 'ShoppingCartController@getCheckout')->name('carts.checkout')->middleware('auth');
+Route::post('/checkout', 'ShoppingCartController@postCheckout')->name('carts.checkout')->middleware('auth');
